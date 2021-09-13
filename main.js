@@ -43,7 +43,7 @@ $('#run').addEventListener('click', () => {
     myInterval = setInterval(() => {
         next();
 
-    }, 1 * 1000);
+    }, 2 * 1000);
 })
 $('#stop').addEventListener('click', () => {
     clearInterval(myInterval);
