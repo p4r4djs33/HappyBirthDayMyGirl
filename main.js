@@ -38,14 +38,18 @@ $('#prev').addEventListener('click', () => {
 })
 
 let myInterval;
+var audio = new Audio('http://docs.google.com/uc?export=open&id=1XB9Z1vJcJjpZ5mbtSl7J958VZtMI34RM');
 
 $('#run').addEventListener('click', () => {
+
+    audio.play();
     myInterval = setInterval(() => {
         next();
 
     }, 2 * 1000);
 })
 $('#stop').addEventListener('click', () => {
+    audio.pause();
     clearInterval(myInterval);
 })
 
