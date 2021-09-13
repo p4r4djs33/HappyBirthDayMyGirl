@@ -1,4 +1,5 @@
-
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
 const IMG_WIDTH = 600;
 const slideContainer = $('.slides');
 const slideImages = [...$$('.slide')];
@@ -15,6 +16,7 @@ function next() {
         index = 0;
     }
 
+
     slideContainer.style.transform = `translateX(${-IMG_WIDTH * index}px)`;
 }
 
@@ -26,31 +28,39 @@ function prev() {
         index--;
     }
 
+
+
     slideContainer.style.transform = `translateX(${-IMG_WIDTH * index}px)`;
 }
 
-$('#next').addEventListener('click', () => {
-    next();
-})
+function run() {
 
-$('#prev').addEventListener('click', () => {
-    prev();
-})
+    if (index < slideImages.length - 1) {
+        index++;
+    } else {
+        index = 0;
+    }
+
+    slideContainer.style.transform = `translateX(${-IMG_WIDTH * index}px)`;
+}
 
 let myInterval;
 var audio = new Audio('http://docs.google.com/uc?export=open&id=1XB9Z1vJcJjpZ5mbtSl7J958VZtMI34RM');
-
 $('#run').addEventListener('click', () => {
 
     audio.play();
+    audio.loop;
     myInterval = setInterval(() => {
-        next();
-
-    }, 2 * 1000);
+        run();
+    }, 4 * 1000);
+    document.getElementById("run").disabled = true;
+    document.getElementById("stop").disabled = false;
 })
 $('#stop').addEventListener('click', () => {
     audio.pause();
     clearInterval(myInterval);
+    document.getElementById("run").disabled = false;
+    document.getElementById("stop").disabled = true;
 })
 
 document.addEventListener('keyup', (e) => {
