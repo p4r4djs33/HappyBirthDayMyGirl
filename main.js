@@ -45,14 +45,14 @@ function run() {
 }
 
 let myInterval;
-var audio = new Audio('http://docs.google.com/uc?export=open&id=1XB9Z1vJcJjpZ5mbtSl7J958VZtMI34RM');
+var audio = new Audio('http://docs.google.com/uc?export=open&id=1kU0kluHXjUtMXFLJPiwWdsECWdvveT48');
 $('#run').addEventListener('click', () => {
 
     audio.play();
-    audio.loop;
+    audio.loop = true;
     myInterval = setInterval(() => {
         run();
-    }, 4 * 1000);
+    }, 3 * 1000);
     document.getElementById("run").disabled = true;
     document.getElementById("stop").disabled = false;
 })
