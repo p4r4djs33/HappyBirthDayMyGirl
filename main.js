@@ -1,6 +1,6 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
-const IMG_WIDTH = 600;
+const IMG_WIDTH = 400;
 const slideContainer = $('.slides');
 const slideImages = [...$$('.slide')];
 
@@ -43,6 +43,13 @@ function run() {
 
     slideContainer.style.transform = `translateX(${-IMG_WIDTH * index}px)`;
 }
+$('#next').addEventListener('click', () => {
+    next();
+})
+
+$('#prev').addEventListener('click', () => {
+    prev();
+})
 
 let myInterval;
 var audio = new Audio('http://docs.google.com/uc?export=open&id=1kU0kluHXjUtMXFLJPiwWdsECWdvveT48');
