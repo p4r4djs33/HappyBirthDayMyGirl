@@ -4,7 +4,7 @@ function myFunction(x) {
     if (x.matches) { // If media query matches
         const $ = document.querySelector.bind(document);
         const $$ = document.querySelectorAll.bind(document);
-        const IMG_WIDTH = 200;
+        const IMG_WIDTH = 250;
         const slideContainer = $('.slides');
         const slideImages = [...$$('.slide')];
 
